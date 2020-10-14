@@ -10,6 +10,7 @@ class Triangle
 
   if @side_a == nil || @side_b == nil || @side_c == nil
     raise TriangleError
+  end
 
   def kind
     if @side_a == @side_b && @side_b == @side_c
