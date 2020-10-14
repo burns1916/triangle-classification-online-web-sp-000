@@ -28,5 +28,6 @@ class Triangle
   class TriangleError < StandardError
     def message
       "One of the sides of the triangle is 0."
+    end
   end
 end
