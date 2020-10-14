@@ -8,6 +8,9 @@ class Triangle
     @side_c = side_c
   end
 
+  if @side_a == nil || @side_b == nil || @side_c == nil
+    raise TriangleError
+
   def kind
     if @side_a == @side_b && @side_b == @side_c
       :equilateral
@@ -21,8 +24,6 @@ class Triangle
 
 
   class TriangleError < StandardError
-    def message
-      "One of the sides of the triangle is 0."
-    end
+
   end
 end
