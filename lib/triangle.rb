@@ -10,16 +10,16 @@ class Triangle
 
   def kind
     if @side_a == @side_b && @side_b == @side_c
+      if @side_a == 0 && @side_b == 0 && @side_c == 0
+        begin
+          raise TriangleError
+        rescue TriangleError =>
+          error
+          puts error.message
+        end
       :equilateral
     elsif @side_a == @side_b || @side_b == @side_c || @side_a == @side_c
       :isosceles
-    elsif @side_a == 0 && @side_b == 0 && @side_c == 0
-      begin
-        raise TriangleError
-      rescue TriangleError =>
-        error
-        puts error.message
-      end
     else
       :scalene
     end
