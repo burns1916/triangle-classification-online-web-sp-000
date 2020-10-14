@@ -8,15 +8,15 @@ class Triangle
     @side_c = side_c
   end
 
-  def kind
+  def kind      
+    if @side_a == 0 && @side_b == 0 && @side_c == 0
+          begin
+            raise TriangleError
+          rescue TriangleError =>
+            error
+            puts error.message
+          end
     if @side_a == @side_b && @side_b == @side_c
-      if @side_a == 0 && @side_b == 0 && @side_c == 0
-        begin
-          raise TriangleError
-        rescue TriangleError =>
-          error
-          puts error.message
-        end
       :equilateral
     elsif @side_a == @side_b || @side_b == @side_c || @side_a == @side_c
       :isosceles
